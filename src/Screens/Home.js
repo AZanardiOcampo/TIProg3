@@ -14,7 +14,7 @@ class Home extends Component {
     render () {
         return (
             <div className="MainPadre">
-                
+                <Header/>
                 <TopPeliculas/>
                 <UpComingMovies/>
             </div>
