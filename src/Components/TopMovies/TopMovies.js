@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieCard from '../MovieCard/MovieCard'; // Asegúrate de importar correctamente el componente MovieCard
+import MovieCard from '../MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
 
 class TopMovies extends Component {
@@ -29,7 +29,6 @@ class TopMovies extends Component {
         let recorte = this.state.peliculas.slice(0,5);
         return (
             <div>
-                <h1>Mas valoradas:</h1>
                 {
                     recorte.map((elm, idx) => (
                         <MovieCard

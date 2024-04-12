@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import MovieCard from '../MovieCard/MovieCard'; // Asegúrate de importar correctamente el componente MovieCard
+import MovieCard from '../MovieCard/MovieCard'; 
 import { Link } from 'react-router-dom';
 
-class TopMovies extends Component {
+class UpcomingMovies extends Component {
     constructor() {
         super();
         this.state = {
-            peliculas: [], // Inicializa el estado con un array vacío para las películas
+            peliculas: [], 
             favoritos: []
         };
     }
 
     componentDidMount() {
-        fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=0ac8f3235ecd7f1b9c2f99fa8b233126")
+        fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=0ac8f3235ecd7f1b9c2f99fa8b233126")
             .then(res => res.json())
             .then(data => {
-                console.log(data.results); // Agrega un console.log para verificar los datos de las películas
-                this.setState({ peliculas: data.results }); // Guarda los datos de las películas en el estado
+                console.log(data.results);
+                this.setState({ peliculas: data.results });
             })
             .catch(e => console.log(e));
     }
@@ -29,21 +29,20 @@ class TopMovies extends Component {
         let recorte = this.state.peliculas.slice(0,5);
         return (
             <div>
-                <h1>Proximamente:</h1>
                 {
                     recorte.map((elm, idx) => (
                         <MovieCard
                             key={idx + elm.title}
                             actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}
                             esFavorito={this.state.favoritos.includes(elm.id)}
-                            peliculas={elm} // Pasa los datos de la película como una prop llamada "peliculas"
+                            peliculas={elm}
                         />
                     ))
                 }
-                <h5><Link to="/AllTop">Ver Todas</Link></h5>
+                <h5><Link to="/AllUpcoming">Ver Todas</Link></h5>
             </div>
         );
     }
 }
 
-export default TopMovies;
+export default UpcomingMovies;

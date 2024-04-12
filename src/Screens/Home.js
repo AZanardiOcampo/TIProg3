@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component} from 'react';
-import MovieCard from '../Components/MovieCard/MovieCard';
+import UpcomingMovies from '../Components/UpcomingMovies/UpComingMovies';
 import TopMovies from '../Components/TopMovies/TopMovies';
 import "./Home.css"
 
@@ -14,7 +14,10 @@ class Home extends Component {
         return (
             <div className="Home">
                 <h1>Bienvenidos</h1>
+                <h1>Mas valoradas:</h1>
                 <TopMovies/>
+                <h1>Proximamente:</h1>
+                <UpcomingMovies/>
             </div>
         )
     }

@@ -20,9 +20,7 @@ class MovieCard extends Component {
         console.log(this.props.peliculas);
             return (
                 <div>
-                    <h2 className="TextoPeliculas">Peliculas Populares</h2>
-                    <Link to="/Alltop">Ver todas</Link>
-                    <section className="PopularMovies">
+                    <section className="Movies">
                         <article className="MovieCard" key={this.props.peliculas.id}>
                             <img src={`https://image.tmdb.org/t/p/w300/${this.props.peliculas.poster_path}/images`} alt={this.props.peliculas.title} />
                             <h2>{this.props.peliculas.title}</h2>

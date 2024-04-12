@@ -9,25 +9,13 @@ function App() {
         <Header />
         <Routes>
         <Route path="/" element={<Home />} />
-        {/* Define tus otras rutas en orden de precedencia */}
-        {/* La primera ruta que coincida se renderizará */}
-        {/* Agrega tus otras rutas aquí */}
+        <Route path="/AllTop" element={<Home />} />
+        <Route path="/AllUpcoming" element={<Home />} />
+        <Route path="/Favorites" element={< Home />} /> //Cambiar los elements por los componentes q corresponde
         </Routes>
         <Footer />
       </div>
   );
 }
 
-/*
-import Footer from './Components/Footer/Footer';
-import ScreenDetallePelicula from './Components/detallePelicula/detallePelicula';
-import ScreenVerTodasTop from './Screens/VerTodasTop/ScreenVerTodasTop';
-import ScreenVerTodasUpcoming from './Screens/VerTodasUpcoming/ScreenVerTodasUpcoming';
-import Favoritos from './Screens/Favoritos/Favoritos';
-*/
-     /*
-        <Route path="/detalle/pelicula/:id" component={ScreenDetallePelicula}/>
-        <Route path="/VerTodasTop" component={ScreenVerTodasTop}/>
-        <Route path="/VerTodasUpcoming" component={ScreenVerTodasUpcoming} />
-        <Route path="/favoritos" component={Favoritos}/>*/
 export default App;
