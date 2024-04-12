@@ -1,8 +1,7 @@
 import React from 'react';
-import Header from "../Components/header/Header"
 import { Component} from 'react';
-import TopPeliculas from '../Components/TopPeliculas/TopPeliculas';
-import UpComingMovies from '../Components/UpcomingMovies/UpComingMovies';
+import MovieCard from '../Components/MovieCard/MovieCard';
+import TopMovies from '../Components/TopMovies/TopMovies';
 import "./Home.css"
 
 class Home extends Component {
@@ -13,10 +12,9 @@ class Home extends Component {
      
     render () {
         return (
-            <div className="MainPadre">
-                <Header/>
-                <TopPeliculas/>
-                <UpComingMovies/>
+            <div className="Home">
+                <h1>Bienvenidos</h1>
+                <TopMovies/>
             </div>
         )
     }

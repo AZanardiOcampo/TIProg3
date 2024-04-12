@@ -1,0 +1,13 @@
+.Footer
+    {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        background-color: black;
+        padding:  10px;
+    }
+
+.ElementosFooter
+{
+    color: white;
+}
