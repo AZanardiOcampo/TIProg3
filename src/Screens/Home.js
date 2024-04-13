@@ -12,9 +12,9 @@ class Home extends Component {
      
     render () {
         return (
-            <div className="Home">
+            <div>
                 <h1>Bienvenidos</h1>
-                <h1>Mas valoradas:</h1>
+                <h1>Peliculas mas valoradas:</h1>
                 <TopMovies/>
                 <h1>Proximamente:</h1>
                 <UpcomingMovies/>

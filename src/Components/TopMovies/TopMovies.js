@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
+import './TopMovies.css'
 
 class TopMovies extends Component {
     constructor() {
@@ -28,7 +29,8 @@ class TopMovies extends Component {
     render() {
         let recorte = this.state.peliculas.slice(0,5);
         return (
-            <div>
+            <section>
+                <div className='ContainerTop'>
                 {
                     recorte.map((elm, idx) => (
                         <MovieCard
@@ -39,8 +41,9 @@ class TopMovies extends Component {
                         />
                     ))
                 }
+                </div>
                 <h5><Link to="/AllTop">Ver Todas</Link></h5>
-            </div>
+            </section>
         );
     }
 }

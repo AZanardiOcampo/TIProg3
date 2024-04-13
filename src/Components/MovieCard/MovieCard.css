@@ -3,3 +3,10 @@
     display: flex;
     flex-direction: row;
 }
+
+.BotonesCard
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly
+}
