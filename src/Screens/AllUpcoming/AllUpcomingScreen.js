@@ -3,7 +3,7 @@ import { Component} from 'react';
 import AllUpcoming from '../../Components/AllUpcoming/AllUpcoming';
 import "../Home.css"
 
-class AllTopScreen extends Component {
+class AllUpcomingScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -19,4 +19,4 @@ class AllTopScreen extends Component {
     }
 }
 
-export default AllTopScreen;
+export default AllUpcomingScreen;

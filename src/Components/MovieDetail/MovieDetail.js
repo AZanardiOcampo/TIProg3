@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import MovieCard from '../MovieCard/MovieCard';
 
 class MovieDetail extends Component {
-    constructor() {
-        super();
-        this.state = {
-            favoritos: [],
-            peliculas: {}
-        };
+    constructor(props) {
+        super(props);
+        this.state = { data: null, VerMas: false, favoritos: [] };    
     }
 
     componentDidMount() {
-        const { match } = this.props; // Obtiene match de las props
-        const { id } = match.params; // Obtiene el ID de la URL de match.params
+       let id = this.props.id;
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0ac8f3235ecd7f1b9c2f99fa8b233126`)
         .then(response => response.json())
         .then(data => {
-            this.setState({ peliculas: data.results }); // Actualiza el estado con los datos de la película
+            this.setState({ data }); 
         })
         .catch(err => console.error(err));
     }
@@ -26,15 +21,36 @@ class MovieDetail extends Component {
     }
 
     render() {
-        console.log(this.state.peliculas);
+        const { data } = this.state;
+        if (!data) {
+            return <div>Loading...</div>;
+        }
+        
         return (
             <section>
                 <div className='ContainerDetail'>
-                    <MovieCard
-                        actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}
-                        esFavorito={this.state.favoritos.includes(this.state.peliculas.id)}
-                        peliculas={this.state.peliculas} // Pasa los datos de la película a MovieCard
-                    />
+                    <article className="MovieCard">
+                        <img src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`} alt={this.props.title} />
+                        <h2>{data.title}</h2>
+                        <p>Rating: {data.popularity}</p>
+                        <p>Estreno: {data.release_date}</p>
+                        <p>Duracion: {data.runtime}</p>
+                        <p>Sinopsis: {data.overview}</p>
+                            
+                        <div className='genres'>Generos: {data.genres.map((elm, idx) => <p>{elm.name}</p>)}</div>
+
+                        <div className="BotonesCard">
+                            <button className="more" onClick={() => this.setState({ VerMas: !this.state.VerMas })}>Ver descripción</button>
+                            <button className="AgregarFavs" onClick={() => this.actualizarFavoritos([...this.state.favoritos, this.props.id])}>Agregar a favoritos</button>
+                        </div>
+                        
+                        <p></p>
+                        {this.state.VerMas && (
+                            <section className="extra">
+                                <p>{data.overview}</p>
+                            </section>
+                        )}
+                    </article>
                 </div>
             </section>
         );

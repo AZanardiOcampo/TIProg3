@@ -1,4 +1,4 @@
-import {Route, Routes} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Home from "../src/Screens/Home"; 
 import Header from '../src/Components/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -10,13 +10,13 @@ function App() {
   return (
       <div className='App'>
         <Header />
-        <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/AllTop" element={<AllTopScreen />} />
-        <Route path="/AllUpcoming" element={<AllUpcomingScreen />} />
-        <Route path="/Favorites" element={< Home />} />
-        <Route path="/MovieDetail/id/:id" element={< MovieDetailScreen />} />
-        </Routes>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/AllTop" component={AllTopScreen} />
+          <Route path="/AllUpcoming" component={AllUpcomingScreen} />
+          <Route path="/Favorites" component={Home} />
+          <Route path="/MovieDetail/id/:id" component={MovieDetailScreen} />
+        </Switch>
         <Footer />
       </div>
   );

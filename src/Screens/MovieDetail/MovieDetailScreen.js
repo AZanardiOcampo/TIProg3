@@ -12,7 +12,7 @@ class MovieDetailScreen extends Component {
     render () {
         return (
             <div className="MovieDetail">
-                <MovieDetail/>
+                <MovieDetail id= {this.props.match.params.id}/>
             </div>
         )
     }
