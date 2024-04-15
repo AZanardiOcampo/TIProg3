@@ -16,7 +16,7 @@ class TopMovies extends Component {
         fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=0ac8f3235ecd7f1b9c2f99fa8b233126")
             .then(res => res.json())
             .then(data => {
-                console.log(data.results); // Agrega un console.log para verificar los datos de las películas
+                console.log(data.results);
                 this.setState({ peliculas: data.results }); // Guarda los datos de las películas en el estado
             })
             .catch(e => console.log(e));

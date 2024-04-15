@@ -1,9 +1,9 @@
 import React from 'react';
 import { Component} from 'react';
-import AllTop from '../Components/AllTop/AllTop';
-import "./Home.css"
+import AllTop from '../../Components/AllTop/AllTop';
+import "../Home.css"
 
-class AllTop extends Component {
+class AllTopScreen extends Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -19,4 +19,4 @@ class AllTop extends Component {
     }
 }
 
-export default AllTop;
+export default AllTopScreen;

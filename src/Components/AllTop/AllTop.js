@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
-import { Link } from 'react-router-dom';
 import '../AllTop/AllTop.css'
 
 class AllTop extends Component {
     constructor() {
         super();
         this.state = {
-            peliculas: [], // Inicializa el estado con un array vacío para las películas
-            favoritos: []
+            peliculas: [],
+            favoritos: [],
+            pag: 1
         };
     }
 
@@ -26,20 +26,33 @@ class AllTop extends Component {
         this.setState({ favoritos: arrayStorage });
     }
 
+    masPeliculas(){
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=7384aa0b23ce68ba408f9921ee711e62&page=${(this.state.pag + 1)}`)
+        .then(res => res.json())
+        .then(data => this.setState({
+            peliculas : this.state.peliculas.concat(data.results),
+            pag: this.state.pag + 1
+        }))
+        .catch(err => console.log(err))
+    }
+
     render() {
         return (
-            <div  className="Alltop">
-                {
-                    this.state.peliculas.map((elm, idx) => (
-                        <MovieCard
-                            key={idx + elm.title}
-                            actualizarFavoritos={(arr) => this.favoritos(arr)}
-                            esFavorito={this.state.favoritos.includes(elm.id)}
-                            peliculas={elm} // Pasa los datos de la película como una prop llamada "peliculas"
-                        />
-                    ))
-                }
-            </div>
+            <section>
+                <div  className="Alltop">
+                    {
+                        this.state.peliculas.map((elm, idx) => (
+                            <MovieCard
+                                key={idx + elm.title}
+                                actualizarFavoritos={(arr) => this.favoritos(arr)}
+                                esFavorito={this.state.favoritos.includes(elm.id)}
+                                peliculas={elm}
+                            />
+                        ))
+                    }
+                    </div>
+                    <button onClick={()=>this.masPeliculas()}>Cargar Mas</button>
+            </section>
         );
     }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './MovieCard.css';
+import { Link } from 'react-router-dom';
 
 class MovieCard extends Component {
     constructor(props) {
@@ -10,19 +11,6 @@ class MovieCard extends Component {
             resultados: []
         };
     }
-
-    favoritos(id){
-        localStorage.setItem('favoritos', JSON.stringify() + id);
-        let favs = JSON.parse(localStorage.getItem("favoritos"));
-        console.log(favs);
-        if (favs.indexOf(id) === -1 ) {
-            this.setState({  
-                favoritos : [this.state.favoritos , id]  
-            }); 
-        } else{
-            alert("Esta pelicula ya esta en favoritos");
-        }
-    }
     evitarSubmit(event) {
         event.preventDefault();
     }
@@ -32,9 +20,10 @@ class MovieCard extends Component {
             return (
                 <div>
                     <section className="Movies">
-                        <article className="MovieCard" key={this.props.peliculas.id}>
-                            <img src={`https://image.tmdb.org/t/p/w300/${this.props.peliculas.poster_path}/images`} alt={this.props.peliculas.title} />
+                            <article className="MovieCard" key={this.props.peliculas.id}>
+                            <Link to={`/MovieDetail/id/${this.props.peliculas.id}`}><img src={`https://image.tmdb.org/t/p/w300/${this.props.peliculas.poster_path}/images`} alt={this.props.peliculas.title} />
                             <h2>{this.props.peliculas.title}</h2>
+                            </Link>
                             <div className="BotonesCard">
                             <button className="more" onClick={() => this.setState({ VerMas: !this.state.VerMas })}>Ver descripción</button>
                             <button className="AgregarFavs" onClick={() => this.state.favoritos.push(this.props.peliculas.id)}>Agregar a favoritos</button>
