@@ -7,7 +7,7 @@ class TopMovies extends Component {
     constructor() {
         super();
         this.state = {
-            peliculas: [], // Inicializa el estado con un array vacío para las películas
+            peliculas: [], 
             favoritos: []
         };
     }
@@ -17,7 +17,7 @@ class TopMovies extends Component {
             .then(res => res.json())
             .then(data => {
                 console.log(data.results);
-                this.setState({ peliculas: data.results }); // Guarda los datos de las películas en el estado
+                this.setState({ peliculas: data.results }); 
             })
             .catch(e => console.log(e));
     }
@@ -37,7 +37,7 @@ class TopMovies extends Component {
                             key={idx + elm.title}
                             actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}
                             esFavorito={this.state.favoritos.includes(elm.id)}
-                            peliculas={elm} // Pasa los datos de la película como una prop llamada "peliculas"
+                            peliculas={elm} 
                         />
                     ))
                 }
