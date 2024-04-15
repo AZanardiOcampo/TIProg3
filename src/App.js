@@ -5,6 +5,7 @@ import Footer from './Components/Footer/Footer';
 import AllUpcomingScreen from './Screens/AllUpcoming/AllUpcomingScreen';
 import AllTopScreen from './Screens/AllTop/AllTopScreen';
 import MovieDetailScreen from './Screens/MovieDetail/MovieDetailScreen';
+import Results from './Screens/Results/Results';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/AllTop" component={AllTopScreen} />
           <Route path="/AllUpcoming" component={AllUpcomingScreen} />
           <Route path="/Favorites" component={Home} />
+          <Route path="/Results/:search" component={Results} />
           <Route path="/MovieDetail/id/:id" component={MovieDetailScreen} />
         </Switch>
         <Footer />

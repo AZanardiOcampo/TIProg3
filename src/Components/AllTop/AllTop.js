@@ -22,7 +22,7 @@ class AllTop extends Component {
             .catch(e => console.log(e));
     }
 
-    favoritos(arrayStorage) {
+    actualizarFavoritos(arrayStorage) {
         this.setState({ favoritos: arrayStorage });
     }
 

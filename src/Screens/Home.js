@@ -9,12 +9,15 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {}
+        console.log('props home', props)
     }
      
     render () {
         return (
             <div>
-                <SearchResults/>
+                <SearchResults
+                 history={this.props.history}
+                />
                 <h1>Bienvenidos</h1>
                 <h1>Peliculas mas valoradas:</h1>
                 <TopMovies/>
