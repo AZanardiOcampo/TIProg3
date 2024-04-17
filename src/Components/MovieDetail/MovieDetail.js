@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 class MovieDetail extends Component {
     constructor(props) {
         super(props);
-        this.state = { data: null, VerMas: false, favoritos: [] };    
+        this.state = { 
+            data: null, 
+            VerMas: false,
+            favoritos: [] };    
     }
 
     componentDidMount() {
@@ -36,20 +39,11 @@ class MovieDetail extends Component {
                         <p>Estreno: {data.release_date}</p>
                         <p>Duracion: {data.runtime}</p>
                         <p>Sinopsis: {data.overview}</p>
-                            
-                        <div className='genres'>Generos: {data.genres.map((elm, idx) => <p>{elm.name}</p>)}</div>
 
+                        <div className='genres'>Generos: {data.genres.map((elm, idx) => <p>{elm.name}</p>)}</div>
                         <div className="BotonesCard">
-                            <button className="more" onClick={() => this.setState({ VerMas: !this.state.VerMas })}>Ver descripción</button>
                             <button className="AgregarFavs" onClick={() => this.actualizarFavoritos([...this.state.favoritos, this.props.id])}>Agregar a favoritos</button>
                         </div>
-                        
-                        <p></p>
-                        {this.state.VerMas && (
-                            <section className="extra">
-                                <p>{data.overview}</p>
-                            </section>
-                        )}
                     </article>
                 </div>
             </section>
