@@ -7,6 +7,8 @@ import AllTopScreen from './Screens/AllTop/AllTopScreen';
 import MovieDetailScreen from './Screens/MovieDetail/MovieDetailScreen';
 import Results from './Screens/Results/Results';
 
+/* COMMIT DE PRUEBA */
+
 function App() {
   return (
       <div className='App'>
