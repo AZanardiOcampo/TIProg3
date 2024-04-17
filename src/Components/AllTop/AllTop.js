@@ -51,7 +51,7 @@ class AllTop extends Component {
                         ))
                     }
                     </div>
-                    <button onClick={()=>this.masPeliculas()}>Cargar Mas</button>
+                    <button onClick={()=>this.masPeliculas()}>CARGAS MAS PELICULAS</button>
             </section>
         );
     }

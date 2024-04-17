@@ -16,17 +16,18 @@ class MovieCard extends Component {
     }
     agregarFavorito(idMovie){
         let storage = localStorage.getItem('favoritos')
+        
         if (storage !== null){
-          let storageParseado = JSON.parse(storage)
-          storageParseado.push(idMovie)
-          this.props.actualizarFavoritos(storageParseado)
-          let storageStringificado = JSON.stringify(storageParseado)
-          localStorage.setItem('favoritos', storageStringificado)
+            let storageParseado = JSON.parse(storage)
+            storageParseado.push(idMovie)
+            this.props.actualizarFavoritos(storageParseado)
+            let storageStringificado = JSON.stringify(storageParseado)
+            localStorage.setItem('favoritos', storageStringificado)
         } else {
-          let inicioFavs = [idMovie]
-          this.props.actualizarFavoritos(inicioFavs)
-          let inicializacionStringificada = JSON.stringify(inicioFavs)
-          localStorage.setItem('favoritos', inicializacionStringificada)
+            let inicioFavs = [idMovie]
+            this.props.actualizarFavoritos(inicioFavs)
+            let inicializacionStringificada = JSON.stringify(inicioFavs)
+            localStorage.setItem('favoritos', inicializacionStringificada)
         }
       }
     

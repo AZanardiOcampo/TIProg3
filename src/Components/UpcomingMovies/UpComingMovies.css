@@ -1,8 +1,33 @@
-.ContainerUpcoming
-{
+.ContainerUpcoming {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
+    gap: 20px;
+}
+
+.MovieCard {
+    background-color: #284b63; 
+    color: #fff;
+    border: 1px solid #d4af37; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.MovieCard:hover {
+    transform: scale(1.05);
+}
+
+button {
+    display: block; 
+    margin: 20px auto; 
+    padding: 10px 10px;
+    background-color: white; 
+    color: #1a1a1a; 
+    border: none; 
+    border-radius: 8px; 
+    font-size: 16px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
 }

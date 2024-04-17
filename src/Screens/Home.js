@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component} from 'react';
+import Header from '../Components/Header/Header'
 import UpcomingMovies from '../Components/UpcomingMovies/UpComingMovies';
 import TopMovies from '../Components/TopMovies/TopMovies';
 import SearchResults from '../Components/SearchResults/SearchResults';
@@ -18,10 +19,9 @@ class Home extends Component {
                 <SearchResults
                  history={this.props.history}
                 />
-                <h1>Bienvenidos</h1>
-                <h1>Peliculas mas valoradas:</h1>
+                <h1 class="h2-home">PELICULAS MEJOR VALORADAS</h1>
                 <TopMovies/>
-                <h1>Proximamente:</h1>
+                <h1 class="h2-home">PROXIMAMENTE</h1>
                 <UpcomingMovies/>
             </div>
         )

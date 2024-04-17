@@ -1,0 +1,28 @@
+body {
+    background-color: #1a1a1a; 
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.h2-home {
+    margin-top: 2rem;
+    margin-bottom: 1rem; 
+    text-align: center;
+    color: #d4af37;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+}
+
+section {
+    padding: 20px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.8); 
+    border-radius: 8px;
+}
+
+a {
+    color: #d4af37; 
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}

@@ -51,7 +51,7 @@ class AllUpcoming extends Component {
                         ))
                     }
                 </div>
-                <button onClick={()=>this.masPeliculas()}>Cargar Mas</button>
+                <button onClick={()=>this.masPeliculas()}>CARGAR MAS PELICULAS</button>
             </section>
         );
     }

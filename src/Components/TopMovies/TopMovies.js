@@ -42,7 +42,7 @@ class TopMovies extends Component {
                     ))
                 }
                 </div>
-                <h5><Link to="/AllTop">Ver Todas</Link></h5>
+                <button><Link to="/AllTop">VER TODAS LAS PELICULAS</Link></button>
             </section>
         );
     }

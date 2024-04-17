@@ -6,3 +6,30 @@
     justify-content: space-around;
     padding: 20px;
 }
+
+.ContainerTop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.MovieCard {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #d4af37; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.MovieCard:hover {
+    transform: scale(1.05);
+}
+
+h5 {
+    text-align: center;
+    margin-top: 20px;
+}
+

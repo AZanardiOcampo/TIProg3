@@ -1,13 +1,31 @@
-.Footer
-    {
-        display: flex;
-        justify-content: space-between;
-        list-style: none;
-        background-color: black;
-        padding:  10px;
+.Footer {
+    list-style-type: none;
+    background-color: #1a1a1a; 
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+    border-top: 3px solid #d4af37; 
+}
+
+.ElementosFooter {
+    color: #d4af37; 
+    margin: 0 15px; 
+    font-size: 22px;
+    text-align: center;
+}
+
+.Footer li {
+    margin: 10px 0; 
+}
+
+/* RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    .Footer {
+        flex-direction: column;
     }
 
-.ElementosFooter
-{
-    color: white;
+    .ElementosFooter {
+        margin: 10px 0; 
+    }
 }

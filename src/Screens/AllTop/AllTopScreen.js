@@ -12,7 +12,7 @@ class AllTopScreen extends Component {
     render () {
         return (
             <div className="Alltop">
-                <h1>Todas las mas valoradas:</h1>
+                <h1 class="h2-home">LAS MEJORES VALORADAS</h1>
                 <AllTop/>
             </div>
         )

@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import './SearchResults.css';
 
 class SearchResults extends Component {
 constructor(props){
@@ -7,7 +8,6 @@ constructor(props){
     this.state = {
         valorInput: ''
     }
-    console.log('props del search', props)
 }
 evitarSubmit(event) {
     event.preventDefault();
@@ -21,10 +21,19 @@ controlarCambio(e){
 
 render(){
     return (
-        <form className='buscador' onSubmit={(e) => this.evitarSubmit(e)}>
-        <input type='text' placeholder='Buscar pelicula' name='busqueda' onChange={(e)=> this.controlarCambio(e)} value = {this.state.valorInput} />
-        <input type= 'submit' value= 'Submit'></input>
-    </form>
+        <div className="search-container"> 
+        <form onSubmit={(e) => this.evitarSubmit(e)} className="buscador">
+            <input
+                type="text"
+                placeholder="Buscar pelicula"
+                name="busqueda"
+                onChange={(e) => this.controlarCambio(e)}
+                value={this.state.valorInput}
+                className="search-input" 
+            />
+            <button type="submit" className="search-button">Buscar</button> 
+        </form>
+    </div>
     )
 }
 }

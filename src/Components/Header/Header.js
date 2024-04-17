@@ -10,19 +10,29 @@ class Header extends Component {
           peliculas: [],
         };
       }
-    render(){
+    
+
+      render(){
         return(
-            <nav>
+            <section>
+                <header class="headerPosta">
+                    DESPEGO EL AVION
+                </header>
                 
-                <ul className="Header">
-                    <p></p>
-                    <li><Link to="/"  className="ElementosHeader">Home</Link></li>
-                    <li><Link to="/Favorites"  className="ElementosHeader">Favoritos</Link></li>
-                    <li><Link to="/AllTop"  className="ElementosHeader">Mas valoradas</Link></li>
-                    <li><Link to="/AllUpcoming"  className="ElementosHeader">Proximamente</Link></li>
-                    <p></p>
-                </ul>
-            </nav>
+                <nav>
+                    <ul className="Header">
+                        <p></p>
+                        <li><Link to="/"  className="ElementosHeader">HOME</Link></li>
+                        <li><Link to="/Favorites"  className="ElementosHeader">FAVORITOS</Link></li>
+                        <li><Link to="/AllTop"  className="ElementosHeader">MEJORES VALORADAS</Link></li>
+                        <li><Link to="/AllUpcoming"  className="ElementosHeader">PROXIMAMENTE</Link></li>
+                        <p></p>
+                    </ul>
+                </nav>
+            </section>
+            
+            
+                
         )
     }
 }

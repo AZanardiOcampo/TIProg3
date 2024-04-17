@@ -1,13 +1,54 @@
-.Header
-{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    background-color: black;
-    padding:  10px;
+.headerPosta {
+    background-color: #333; 
+    color: #d4af37; 
+    text-align: center;
+    padding: 10px 0;
+    font-size: 44px;
+    font-weight: bold;
+    border-bottom: 2px solid #d4af37;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
 }
 
-.ElementosHeader{
+nav {
+    background-color: #1a1a1a; 
+    color: #fff;
+    padding: 25px 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ul.Header {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+ul.Header li {
+    margin: 0 20px;
+}
+
+ul.Header li a {
+    color: #fff; 
     text-decoration: none;
-    color: white;
+    font-size: 22px;
+    transition: color 0.3s ease;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ul.Header li a:hover {
+    color: #d4af37; 
+    text-decoration: underline;
+}
+
+/* RESPONSIVE WEB DESIGN */
+@media (max-width: 768px) {
+    ul.Header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    ul.Header li {
+        margin: 10px 0;
+    }
 }

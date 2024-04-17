@@ -42,7 +42,7 @@ class UpcomingMovies extends Component {
                     ))
                 }
                 </div>
-                <h5><Link to="/AllUpcoming">Ver Todas</Link></h5>
+                <button><Link to="/AllUpcoming">VER TODAS LAS PELICULAS</Link></button>
             </section>
         );
     }

@@ -6,8 +6,7 @@ import AllUpcomingScreen from './Screens/AllUpcoming/AllUpcomingScreen';
 import AllTopScreen from './Screens/AllTop/AllTopScreen';
 import MovieDetailScreen from './Screens/MovieDetail/MovieDetailScreen';
 import Results from './Screens/Results/Results';
-
-/* COMMIT DE PRUEBA */
+import Favoritos from './Screens/Favorites/FavoritesScreen';
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/AllTop" component={AllTopScreen} />
           <Route path="/AllUpcoming" component={AllUpcomingScreen} />
-          <Route path="/Favorites" component={Home} />
+          <Route path="/Favorites" component={Favoritos} />
           <Route path="/Results/:search" component={Results} />
           <Route path="/MovieDetail/id/:id" component={MovieDetailScreen} />
         </Switch>
