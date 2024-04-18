@@ -34,10 +34,10 @@ actualizarFavoritos (arrayStorage) {
 render(){
     return(
         <div>
-            <h1>Favoritos:</h1>
+            <h1>AQUI ESTAN TUS PELICULAS FAVORITAS:</h1>
                 <div className="containerFavs">
                 {this.state.peliculas.length > 0 ?
-                this.state.peliculas.map((elm,idx) =>  <CardPelicula actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={true} data= {elm} key= {`${idx}-${elm.name}`}/>):
+                this.state.peliculas.map((elm,idx) =>  <MovieCard actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={true} data= {elm} key= {`${idx}-${elm.name}`}/>):
                 <h1 className="noFavs">Todavia no has agregado peliculas a tu seccion de favoritos</h1>}
                 </div>
         </div>

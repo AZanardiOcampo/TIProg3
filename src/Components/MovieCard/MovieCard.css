@@ -10,3 +10,19 @@
     flex-direction: row;
     justify-content:space-evenly
 }
+
+/* RESPONSIVE WEB DESIGN */
+@media (max-width: 767px) {
+    .Movies {
+        justify-content: center; 
+    }
+
+    .MovieCard {
+        margin: 10px;
+    }
+
+    .BotonesCard {
+        flex-direction: row; 
+        justify-content: space-around;
+    }
+}

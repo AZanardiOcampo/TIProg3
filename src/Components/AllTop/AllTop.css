@@ -14,3 +14,30 @@
     color: #d4af37;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
 }
+
+button {
+    display: block; 
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0e14a;
+}
+
+/* RESPONSIVE WEB DESIGN */
+@media (max-width: 767px) {
+    .Alltop {
+        justify-content: center;
+    }
+
+    .MovieCard {
+        width: 40px;
+    }
+}

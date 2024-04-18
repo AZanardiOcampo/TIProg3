@@ -22,3 +22,15 @@ button {
 button:hover {
     background-color: #f0e14a;
 }
+
+@media (max-width: 767px) {
+    .AllUpcoming {
+        justify-content: center; 
+        gap: 10px;
+    }
+
+    .MovieCard {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+}
