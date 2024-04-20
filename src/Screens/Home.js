@@ -1,6 +1,5 @@
 import React from 'react';
 import { Component} from 'react';
-import Header from '../Components/Header/Header'
 import UpcomingMovies from '../Components/UpcomingMovies/UpComingMovies';
 import TopMovies from '../Components/TopMovies/TopMovies';
 import SearchResults from '../Components/SearchResults/SearchResults';

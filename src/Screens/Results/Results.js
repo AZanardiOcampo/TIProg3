@@ -20,6 +20,10 @@ class Results extends Component {
             })
             .catch(e => console.log(e));
         }
+
+    actualizarFavoritos(arrayStorage) {
+      this.setState({ favoritos: arrayStorage });
+    }
   render() {
     return (
       <div  className="Results">
@@ -27,7 +31,7 @@ class Results extends Component {
               this.state.peliculas.map((elm, idx) => (
                   <MovieCard
                       key={idx + elm.title}
-                      actualizarFavoritos={(arr) => this.favoritos(arr)}
+                      actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}
                       esFavorito={this.state.favoritos.includes(elm.id)}
                       peliculas={elm}
                   />

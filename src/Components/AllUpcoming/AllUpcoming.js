@@ -7,8 +7,10 @@ class AllUpcoming extends Component {
         super();
         this.state = {
             peliculas: [],
+            peliculasFiltradas: [],
             favoritos: [],
-            pag: 1
+            pag: 1,
+            busqueda: '',
         };
     }
 
@@ -36,15 +38,39 @@ class AllUpcoming extends Component {
         .catch(err => console.log(err))
     }
 
+    controlarCambio = (e) => {
+        const busqueda = e.target.value.toLowerCase();
+        const peliculasFiltradas = this.state.peliculas.filter((pelicula) =>
+            pelicula.title.toLowerCase().includes(busqueda)
+        );
+        this.setState({ busqueda, peliculasFiltradas });
+    };
+
     render() {
+
+        const peliculasAMostrar = this.state.busqueda ? this.state.peliculasFiltradas : this.state.peliculas;
+
         return (
             <section>
+                <div className="search-container"> 
+                    <form onSubmit={(e) => this.evitarSubmit(e)} className="buscador">
+                    <input
+                        type="text"
+                        placeholder="Buscar en próximamente"
+                        name="busqueda"
+                        onChange={(e) => this.controlarCambio(e)}
+                        value={this.state.busqueda}
+                        className="search-input" 
+                    />
+                        <button type="submit" className="search-button">Buscar</button> 
+                    </form>
+                </div>
                 <div  className="AllUpcoming">
                     {
-                        this.state.peliculas.map((elm, idx) => (
+                        peliculasAMostrar.map((elm, idx) => (
                             <MovieCard
                                 key={idx + elm.title}
-                                actualizarFavoritos={(arr) => this.favoritos(arr)}
+                                actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}
                                 esFavorito={this.state.favoritos.includes(elm.id)}
                                 peliculas={elm}
                             />

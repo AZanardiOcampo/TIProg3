@@ -35,14 +35,14 @@ class TopMovies extends Component {
                     recorte.map((elm, idx) => (
                         <MovieCard
                             key={idx + elm.title}
-                            actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}
+                            actualizarFavoritos={(arrayStorage) => this.actualizarFavoritos(arrayStorage)}
                             esFavorito={this.state.favoritos.includes(elm.id)}
                             peliculas={elm} 
                         />
                     ))
                 }
                 </div>
-                <button><Link to="/AllTop">VER TODAS LAS PELICULAS</Link></button>
+                <Link to="/AllTop"><button className='botonVerTodos'>VER TODAS LAS PELICULAS</button></Link>
             </section>
         );
     }

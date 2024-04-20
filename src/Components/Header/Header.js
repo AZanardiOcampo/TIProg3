@@ -24,7 +24,7 @@ class Header extends Component {
                         <p></p>
                         <li><Link to="/"  className="ElementosHeader">HOME</Link></li>
                         <li><Link to="/Favorites"  className="ElementosHeader">FAVORITOS</Link></li>
-                        <li><Link to="/AllTop"  className="ElementosHeader">MEJORES VALORADAS</Link></li>
+                        <li><Link to="/AllTop"  className="ElementosHeader">MEJOR VALORADAS</Link></li>
                         <li><Link to="/AllUpcoming"  className="ElementosHeader">PROXIMAMENTE</Link></li>
                         <p></p>
                     </ul>
