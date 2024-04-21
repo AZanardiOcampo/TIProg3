@@ -7,6 +7,7 @@ import AllTopScreen from './Screens/AllTop/AllTopScreen';
 import MovieDetailScreen from './Screens/MovieDetail/MovieDetailScreen';
 import Results from './Screens/Results/Results';
 import Favoritos from './Screens/Favorites/FavoritesScreen';
+import Error404 from './Components/Error404/Error404';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/Favorites" component={Favoritos} />
           <Route path="/Results/:search" component={Results} />
           <Route path="/MovieDetail/id/:id" component={MovieDetailScreen} />
+          <Route path="*" component={Error404} />
         </Switch>
         <Footer />
       </div>
