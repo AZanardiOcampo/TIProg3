@@ -15,15 +15,16 @@ class AllTop extends Component {
     }
 
     componentDidMount() {
+        this.setState({ isLoading: true });
         fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=0ac8f3235ecd7f1b9c2f99fa8b233126")
             .then(res => res.json())
             .then(data => {
                 console.log(data.results);
-                this.setState({ peliculas: data.results });
+                this.setState({ peliculas: data.results, isLoading: false  });
             })
             .catch(e => console.log(e));
     }
-
+    
     actualizarFavoritos(arrayStorage) {
         this.setState({ favoritos: arrayStorage });
     }
@@ -50,9 +51,13 @@ class AllTop extends Component {
         e.preventDefault();
     }
 
+
     render() {
         const peliculasAMostrar = this.state.busqueda ? this.state.peliculasFiltradas : this.state.peliculas;
-
+        const { isLoading } = this.state;
+        if (isLoading) {
+          return <div>LOADING...</div>;
+        }
         return (
             <section>
                 <div className="search-container"> 

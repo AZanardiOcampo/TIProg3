@@ -26,7 +26,7 @@ render(){
             <input
                 type="text"
                 placeholder="Buscar pelicula"
-                name="busqueda"
+                name="busqueda" required
                 onChange={(e) => this.controlarCambio(e)}
                 value={this.state.valorInput}
                 className="search-input" 

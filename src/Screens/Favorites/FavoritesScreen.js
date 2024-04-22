@@ -13,19 +13,24 @@ class Favorites extends Component{
     }
 
 componentDidMount() {
-    if (this.state.favoritos != null) {
-        let storageParseado = JSON.parse(this.state.favoritos);
-        Promise.all(
-            storageParseado.map(elm =>
-                fetch(`https://api.themoviedb.org/3/movie/${elm}?api_key=39761ff3840b501535e80bbc7bffb035`)
-                .then(res => res.json())
-            )
+    const favoritos = localStorage.getItem('favoritos');
+    if (favoritos) {
+      this.setState({ isLoading: true });
+      let storageParseado = JSON.parse(favoritos);
+      Promise.all(
+        storageParseado.map(elm =>
+          fetch(`https://api.themoviedb.org/3/movie/${elm}?api_key=39761ff3840b501535e80bbc7bffb035`)
+          .then(res => res.json())
         )
-        .then(peliculas => this.setState({ peliculas }))
-        .catch(e => console.log(e));
+      )
+      .then(peliculas => {
+        this.setState({ peliculas, isLoading: false });
+      })
+      .catch(e => {
+        console.log(e);
+      });
     }
-}
-
+  }
 
 actualizarFavoritos (arrayStorage) {
     this.setState({favoritos: arrayStorage})
@@ -33,6 +38,10 @@ actualizarFavoritos (arrayStorage) {
 
 render(){
     console.log(this.state.peliculas);
+    const { isLoading } = this.state;
+    if (isLoading) {
+      return <div>LOADING...</div>;
+    }
     return(
         <div>
             <h1>AQUI ESTAN TUS PELICULAS FAVORITAS:</h1>

@@ -12,20 +12,29 @@ class Results extends Component {
       favoritos: []
     };
   }
+
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.match.params.search}&api_key=0ac8f3235ecd7f1b9c2f99fa8b233126`)
-            .then(res => res.json())
-            .then(data => {
-                console.log(data.results);
-                this.setState({ peliculas: data.results });
-            })
-            .catch(e => console.log(e));
-        }
+      this.setState({ isLoading: true });
+      fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.match.params.search}&api_key=0ac8f3235ecd7f1b9c2f99fa8b233126`)
+        .then(res => res.json())
+        .then(data => {
+          this.setState({ peliculas: data.results, isLoading: false }); 
+        })
+        .catch(e => {
+          console.log(e);
+          this.setState({ isLoading: false });
+        });
+    }
 
     actualizarFavoritos(arrayStorage) {
       this.setState({ favoritos: arrayStorage });
     }
-  render() {
+  
+    render() {
+      const { isLoading } = this.state;
+      if (isLoading) {
+        return <div>LOADING...</div>;
+      }
     return (
       <section>
         <h1>RESULTADOS DE BUSQUEDA</h1>

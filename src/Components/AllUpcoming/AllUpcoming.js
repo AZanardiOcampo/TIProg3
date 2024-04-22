@@ -29,11 +29,13 @@ class AllUpcoming extends Component {
     }
 
     masPeliculas(){
+        this.setState({ isLoading: true });
         fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=7384aa0b23ce68ba408f9921ee711e62&page=${(this.state.pag + 1)}`)
         .then(res => res.json())
         .then(data => this.setState({
             peliculas : this.state.peliculas.concat(data.results),
-            pag: this.state.pag + 1
+            pag: this.state.pag + 1, 
+            isLoading: false 
         }))
         .catch(err => console.log(err))
     }
@@ -51,9 +53,11 @@ class AllUpcoming extends Component {
     }
     
     render() {
-
         const peliculasAMostrar = this.state.busqueda ? this.state.peliculasFiltradas : this.state.peliculas;
-
+        const { isLoading } = this.state;
+        if (isLoading) {
+          return <div>LOADING...</div>;
+        }
         return (
             <section>
                 <div className="search-container"> 
