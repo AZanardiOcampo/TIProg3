@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MovieCard from '../../Components/MovieCard/MovieCard';
 import '../../Components/SearchResults/SearchResults.css'
+import './Results.css'
 
 class Results extends Component {
   constructor(props) {

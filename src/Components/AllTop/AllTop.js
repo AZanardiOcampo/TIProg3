@@ -46,6 +46,9 @@ class AllTop extends Component {
         this.setState({ busqueda, peliculasFiltradas });
     };
 
+    evitarSubmit(e) {
+        e.preventDefault();
+    }
 
     render() {
 
