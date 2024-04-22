@@ -16,7 +16,7 @@ class Header extends Component {
         return(
             <section>
                 <header class="headerPosta">
-                    DESPEGO EL AVION
+                    MOVIEMASTERS
                 </header>
                 
                 <nav>

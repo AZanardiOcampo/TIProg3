@@ -6,7 +6,9 @@ class MovieDetail extends Component {
         super(props);
         this.state = {
             data: null,
-            VerMas: false
+            VerMas: false,
+            peliculas: [],
+            favoritos: [],
         };
     }
 
@@ -43,7 +45,7 @@ class MovieDetail extends Component {
     }
 
     render() {
-        const { data, isFavorite } = this.state;
+        const { data } = this.state;
         if (!data) {
             return <div>LOADING...</div>;
         }
@@ -62,7 +64,7 @@ class MovieDetail extends Component {
                         </div>
                         <div className='genres'>GENEROS: {data.genres.map((elm, idx) => <p key={idx}>{elm.name}</p>)}</div>
                         <div className="BotonesCard">
-                            { isFavorite ? 
+                            { this.state.isFavorite ? 
                                 <button className="AgregarFavs" onClick={() => this.sacarFavorito(data.id)}>Sacar de favoritos</button> :
                                 <button className="AgregarFavs" onClick={() => this.agregarFavorito(data.id)}>Agregar a favoritos</button>
                             }

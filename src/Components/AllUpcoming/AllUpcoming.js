@@ -66,7 +66,6 @@ class AllUpcoming extends Component {
                         value={this.state.busqueda}
                         className="search-input" 
                     /> 
-                        <button type="submit" className="search-button">Buscar</button> 
                     </form>
                 </div>
                 <div  className="AllUpcoming">

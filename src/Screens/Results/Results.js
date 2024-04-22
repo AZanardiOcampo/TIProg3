@@ -27,6 +27,8 @@ class Results extends Component {
     }
   render() {
     return (
+      <section>
+        <h1>RESULTADOS DE BUSQUEDA</h1>
       <div  className="Results">
           {
               this.state.peliculas.map((elm, idx) => (
@@ -39,6 +41,7 @@ class Results extends Component {
               ))
           }
           </div>
+      </section>
     )
   }
     

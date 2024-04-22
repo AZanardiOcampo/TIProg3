@@ -51,7 +51,6 @@ class AllTop extends Component {
     }
 
     render() {
-
         const peliculasAMostrar = this.state.busqueda ? this.state.peliculasFiltradas : this.state.peliculas;
 
         return (
@@ -66,7 +65,6 @@ class AllTop extends Component {
                         value={this.state.busqueda}
                         className="search-input" 
                     />
-                        <button type="submit" className="search-button">Buscar</button> 
                     </form>
                 </div>
                 <div  className="Alltop">

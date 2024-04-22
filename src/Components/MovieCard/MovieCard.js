@@ -41,6 +41,9 @@ class MovieCard extends Component {
     render() {
         console.log(this.props.peliculas);
         const { peliculas } = this.props;
+        if (!peliculas) {
+            return <div>LOADING...</div>;
+        }
         let storage = localStorage.getItem('favoritos');
         let isFavorite = false;
 
